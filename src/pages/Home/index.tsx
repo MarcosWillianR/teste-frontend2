@@ -1,11 +1,15 @@
 import React from 'react';
 
-import { Container } from './styles';
+import Header from '../../components/Header';
+
+import { Container, GradientContainer } from './styles';
 
 const Home: React.FC = () => {
   return (
     <Container>
-      <h1>Home</h1>
+      <GradientContainer>
+        <Header />
+      </GradientContainer>
     </Container>
   );
 };
