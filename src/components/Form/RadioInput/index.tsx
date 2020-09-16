@@ -1,4 +1,4 @@
-import React, { useEffect, useRef, InputHTMLAttributes } from 'react';
+import React, { useEffect, useRef, InputHTMLAttributes, useState } from 'react';
 import { useField } from '@unform/core';
 
 import { Container } from './styles';
@@ -7,10 +7,19 @@ interface Props extends InputHTMLAttributes<HTMLInputElement> {
   name: string;
   options: {
     id: string;
+    checked?: boolean;
     value: string;
     label: string;
   }[];
 }
+
+interface Option {
+  id: string;
+  value: string;
+  label: string;
+  checked?: boolean;
+}
+
 const RadioInput: React.FC<Props> = ({ name, options, ...rest }) => {
   const inputRefs = useRef<HTMLInputElement[]>([]);
   const { fieldName, registerField, defaultValue = '' } = useField(name);
