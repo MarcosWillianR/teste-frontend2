@@ -32,7 +32,6 @@ export const GradientContainer = styled.div`
 
   @media screen and (max-width: 760px) {
     ${GRADIENT_BACKGROUND_MOBILE};
-    min-height: 447px;
   }
 `;
 
@@ -63,6 +62,7 @@ export const TitleContent = styled.div`
     font-weight: 400;
     line-height: 35px;
     color: ${SUBTITLE_COLOR};
+    margin-bottom: 25px;
 
     @media screen and (max-width: 760px) {
       font-size: ${MOBILE_FONT_SIZE_24};
@@ -78,7 +78,7 @@ export const FormContainer = styled.div`
   top: -205px;
 
   @media screen and (max-width: 760px) {
-    top: -75px;
+    top: -180px;
   }
 `;
 
@@ -172,7 +172,7 @@ export const FormValueContainer = styled.div`
   margin-bottom: 32px;
 
   @media screen and (max-width: 760px) {
-    margin-top: -40px;
+    margin-top: -100px;
   }
 `;
 
@@ -183,6 +183,8 @@ export const FormValueContent = styled.div`
   background: ${LIGHT_COLOR};
   border-radius: ${BORDER_RADIUS_10};
   padding: 13px 15px;
+  overflow-x: auto;
+  white-space: nowrap;
 
   h2 {
     color: ${GRAY_COLOR};
