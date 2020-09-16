@@ -1,18 +1,22 @@
 import styled from 'styled-components';
 import { Form } from '@unform/web';
 import {
-  GRADIENT_BACKGROUND,
+  GRADIENT_BACKGROUND_DESKTOP,
+  GRADIENT_BACKGROUND_MOBILE,
   DESKTOP_FONT_SIZE_64,
   MOBILE_FONT_SIZE_48,
   DESKTOP_FONT_SIZE_30,
   MOBILE_FONT_SIZE_24,
+  DESKTOP_FONT_SIZE_20,
   DESKTOP_FONT_SIZE_16,
   MAIN_COLOR_LIGHT,
+  MAIN_COLOR_DARK,
   SUBTITLE_COLOR,
   BORDER_RADIUS_10,
   BORDER_RADIUS_4,
   LIGHT_COLOR,
   BUTTON_BLUE_BG_COLOR,
+  GRAY_COLOR,
 } from '../../styles/variables';
 import { container } from '../../styles/mixins';
 
@@ -21,13 +25,14 @@ export const Container = styled.div`
 `;
 
 export const GradientContainer = styled.div`
-  ${GRADIENT_BACKGROUND};
+  ${GRADIENT_BACKGROUND_DESKTOP};
   width: 100%;
   height: 100%;
-  max-height: 547px;
+  min-height: 547px;
 
   @media screen and (max-width: 760px) {
-    background: linear-gradient(180deg, #a0aec0 0%, #718096 100%);
+    ${GRADIENT_BACKGROUND_MOBILE};
+    min-height: 447px;
   }
 `;
 
@@ -68,17 +73,22 @@ export const TitleContent = styled.div`
 
 export const FormContainer = styled.div`
   ${container};
+
+  position: relative;
+  top: -205px;
+
+  @media screen and (max-width: 760px) {
+    top: -75px;
+  }
 `;
 
 export const FormContent = styled(Form)`
   width: 100%;
   border-radius: ${BORDER_RADIUS_10};
   background: ${MAIN_COLOR_LIGHT};
-  margin-top: 51px;
   height: 100%;
   min-height: 246px;
   position: relative;
-  top: 30px;
 
   @media screen and (max-width: 760px) {
     min-height: 510px;
@@ -88,8 +98,8 @@ export const FormContent = styled(Form)`
 `;
 
 export const InputContainer = styled.div`
+  height: 100%;
   display: flex;
-  flex-wrap: wrap;
   padding: 0 24px;
 
   @media screen and (max-width: 760px) {
@@ -153,5 +163,45 @@ export const ButtonContainer = styled.div`
     svg {
       margin-right: 10px;
     }
+  }
+`;
+
+export const FormValueContainer = styled.div`
+  ${container};
+  margin-top: -100px;
+  margin-bottom: 32px;
+
+  @media screen and (max-width: 760px) {
+    margin-top: -40px;
+  }
+`;
+
+export const FormValueContent = styled.div`
+  width: 100%;
+  max-width: 658px;
+  margin: 0 auto;
+  background: ${LIGHT_COLOR};
+  border-radius: ${BORDER_RADIUS_10};
+  padding: 13px 15px;
+
+  h2 {
+    color: ${GRAY_COLOR};
+    font-size: ${DESKTOP_FONT_SIZE_20};
+    font-weight: 500;
+    line-height: 23px;
+    margin-bottom: 6px;
+  }
+
+  span {
+    display: block;
+  }
+
+  strong {
+    display: block;
+    margin-left: 22px;
+    color: ${MAIN_COLOR_DARK};
+    font-size: ${DESKTOP_FONT_SIZE_20};
+    line-height: 26px;
+    font-weight: 400;
   }
 `;

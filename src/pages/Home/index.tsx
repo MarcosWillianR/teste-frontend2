@@ -16,6 +16,8 @@ import {
   InputContainer,
   RadioInputContainer,
   ButtonContainer,
+  FormValueContainer,
+  FormValueContent,
 } from './styles';
 
 interface Options {
@@ -46,49 +48,61 @@ const Home: React.FC = () => {
           <h1>Viaje pelo mundo inteiro</h1>
           <h2>Aqui você encontra os melhores voos do mundo</h2>
         </TitleContent>
+      </GradientContainer>
 
-        <FormContainer>
-          <FormContent ref={formRef} onSubmit={handleSubmit}>
-            <RadioInputContainer>
-              <RadioInput options={options} name="aba" />
-            </RadioInputContainer>
+      <FormContainer>
+        <FormContent ref={formRef} onSubmit={handleSubmit}>
+          <RadioInputContainer>
+            <RadioInput options={options} name="aba" />
+          </RadioInputContainer>
 
-            <InputContainer>
-              <Input
-                name="origin"
-                icon="image"
-                label="Origem"
-                placeholder="Insira a origem"
-              />
-              <Input
-                name="destiny"
-                icon="place"
-                label="Destino"
-                placeholder="Insira a cidade ou destino"
-              />
-              <Input
-                name="date"
-                icon="date"
-                label="Data de ida / Retorno"
-                placeholder="insira as datas de ida e retorno"
-              />
-              <Input
-                name="personsNumber"
-                icon="person"
-                label="Número de pessoas"
-                placeholder="insira o número de pessoas"
-              />
-            </InputContainer>
+          <InputContainer>
+            <Input
+              name="origin"
+              icon="image"
+              label="Origem"
+              placeholder="Insira a origem"
+            />
+            <Input
+              name="destiny"
+              icon="place"
+              label="Destino"
+              placeholder="Insira a cidade ou destino"
+            />
+            <Input
+              name="date"
+              icon="date"
+              label="Data de ida / Retorno"
+              placeholder="insira as datas de ida e retorno"
+            />
+            <Input
+              name="personsNumber"
+              icon="person"
+              label="Número de pessoas"
+              placeholder="insira o número de pessoas"
+            />
+          </InputContainer>
 
-            <ButtonContainer>
-              <button type="submit">
-                <IconSearch size={18} color={MAIN_COLOR_LIGHT} />
+          <ButtonContainer>
+            <button type="submit">
+              <IconSearch size={18} color={MAIN_COLOR_LIGHT} />
                 Busque as viagens
               </button>
-            </ButtonContainer>
-          </FormContent>
-        </FormContainer>
-      </GradientContainer>
+          </ButtonContainer>
+        </FormContent>
+      </FormContainer>
+
+      <FormValueContainer>
+        <FormValueContent>
+          <h2>VALOR DO FORM</h2>
+          <span>{'{'}</span>
+          <strong>"origem": "São Paulo, Brasil",</strong>
+          <strong>"destino": "São Paulo, Brasil",</strong>
+          <strong>"data": "Sábado 14/4 - Quinta 19/04",</strong>
+          <strong>"pessoas": 1</strong>
+          <span>{'}'}</span>
+        </FormValueContent>
+      </FormValueContainer>
     </Container>
   );
 };

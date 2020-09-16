@@ -9,9 +9,11 @@ const PLACEHOLDER_COLOR = '#A0AEC0';
 const BUTTON_BLUE_BG_COLOR = '#667EEA';
 const SUBTITLE_COLOR = '#AAFAFF';
 const BORDER_COLOR = '#CBD5E0';
+const GRAY_COLOR = '#718096';
 
 // GRADIENT BG
-const GRADIENT_BACKGROUND = `background: url(${gradientBg}), linear-gradient(180deg, #A0AEC0 0%, #718096 100%);`;
+const GRADIENT_BACKGROUND_DESKTOP = `background: url(${gradientBg}), linear-gradient(180deg, #A0AEC0 0%, #718096 100%);`;
+const GRADIENT_BACKGROUND_MOBILE = 'background: linear-gradient(180deg, #a0aec0 0%, #718096 100%);';
 
 // RADIUS
 const BORDER_RADIUS_10 = '10px';
@@ -45,6 +47,8 @@ export {
   MOBILE_FONT_SIZE_24,
   BORDER_RADIUS_10,
   BORDER_RADIUS_4,
-  GRADIENT_BACKGROUND,
+  GRADIENT_BACKGROUND_DESKTOP,
+  GRADIENT_BACKGROUND_MOBILE,
   PLACEHOLDER_COLOR,
+  GRAY_COLOR,
 };
