@@ -60,7 +60,7 @@ export const DesktopHeaderContent = styled.div`
     display: flex;
     align-items: center;
 
-    img {
+    svg {
       margin-right: 10.5px;
     }
 
@@ -99,7 +99,9 @@ export const MobileHeaderContent = styled.div<MobileHeaderContentProps>`
     padding: 12px;
     justify-content: center;
     position: absolute;
-    top: 50px;
+    z-index: 999;
+    box-shadow: 0px 20px 25px rgba(0, 0, 0, 0.1), 0px 10px 10px rgba(0, 0, 0, 0.04);
+    top: 70px;
 
     button {
       display: block;

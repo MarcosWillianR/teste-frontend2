@@ -94,7 +94,7 @@ export const FormContent = styled(Form)`
     min-height: 510px;
   }
 
-  box-shadow: 0 20px 18px rgba(0, 0, 0, 0.08);
+  box-shadow: 0px 20px 25px rgba(0, 0, 0, 0.1), 0px 10px 10px rgba(0, 0, 0, 0.04);
 `;
 
 export const InputContainer = styled.div`

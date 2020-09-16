@@ -1,7 +1,6 @@
 import React, { useState } from 'react';
 
-import logo from '../../assets/icons/Logo.svg';
-import menuMobileIcon from '../../assets/icons/Menu.svg';
+import { IconMenu, IconLogo } from '../Icons';
 
 import {
   Container,
@@ -19,7 +18,7 @@ const Header: React.FC = () => {
         <DesktopHeaderContent>
           <nav>
             <ul>
-              <img src={logo} alt="Viaje pelo mundo inteiro" />
+              <IconLogo size={46} color="#fff" />
 
               <li>
                 <a href="https://www.codewars.com/">Explore</a>
@@ -46,14 +45,14 @@ const Header: React.FC = () => {
         </DesktopHeaderContent>
 
         <MobileHeaderContent navigationActive={mobileNavigationActive}>
+          <IconLogo size={46} color="#fff" />
+
           <button
             type="button"
             onClick={() => setMobileNavigationActive(state => !state)}
           >
-            <img src={menuMobileIcon} alt="Abrir Menu" />
+            <IconMenu size={32} color="#fff" />
           </button>
-
-          <img src={logo} alt="Viaje pelo mundo inteiro" />
 
           <div>
             <nav>
