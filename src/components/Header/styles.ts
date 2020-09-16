@@ -2,7 +2,10 @@ import styled from 'styled-components';
 import { container } from '../../styles/mixins';
 import {
   BORDER_COLOR,
+  BORDER_RADIUS_4,
   MAIN_COLOR_DARK,
+  MAIN_COLOR_LIGHT,
+  LIGHT_COLOR,
   LABEL_COLOR,
 } from '../../styles/variables';
 
@@ -13,19 +16,64 @@ interface MobileHeaderContentProps {
 export const Container = styled.header`
   ${container};
   height: 60px;
+  padding: 12px;
 `;
 
 export const HeaderContent = styled.div`
+  width: 100%;
   display: flex;
   align-items: center;
   border-bottom: 1px solid ${BORDER_COLOR};
+  padding-bottom: 15px;
+  margin-bottom: 15px;
 `;
 
 export const DesktopHeaderContent = styled.div`
+  width: 100%;
   display: flex;
+  align-items: center;
+  justify-content: space-between;
 
   @media screen and (max-width: 760px) {
     display: none;
+  }
+
+  button {
+    background: 0;
+    color: ${MAIN_COLOR_LIGHT};
+    border: 2px solid ${BORDER_COLOR};
+    border-radius: ${BORDER_RADIUS_4};
+    padding: 12px;
+    transition: color 0.5s linear;
+
+    &:hover {
+      color: ${LIGHT_COLOR};
+    }
+  }
+
+  button:first-of-type {
+    margin-right: 24px;
+    border: 0;
+  }
+
+  ul {
+    display: flex;
+    align-items: center;
+
+    img {
+      margin-right: 10.5px;
+    }
+
+    a {
+      margin-right: 24px;
+      text-decoration: none;
+      color: ${MAIN_COLOR_LIGHT};
+      transition: color 0.5s linear;
+
+      &:hover {
+        color: ${LIGHT_COLOR};
+      }
+    }
   }
 `;
 
